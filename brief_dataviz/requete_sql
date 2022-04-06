@@ -1,0 +1,30 @@
+#fully_vax_ita
+SELECT
+  date AS "time",
+  people_fully_vaccinated AS "people_fully_vaccinated"
+FROM country_vaccinations
+where country='Italy'
+ORDER BY date
+#vax_per_hundred_fra
+SELECT
+  date AS "time",
+  people_vaccinated_per_hundred
+FROM country_vaccinations
+WHERE
+  country='France'
+ORDER BY date
+#total_vaxx
+SELECT
+  date AS "time",
+  total_vaccinations
+FROM country_vaccinations
+WHERE
+  $__timeFilter(date)
+ORDER BY date
+#vax_per_vaccine_type
+SELECT
+  date AS "time",
+  vaccines AS metric,
+  daily_vaccinations
+FROM country_vaccinations
+ORDER BY date
